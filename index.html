@@ -5,16 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div>
-        <input placeholder="Vou fazer isso! (tomara)">
-        <button>Adicionar</button>
-        <ul>
+    <div class="container">
+        <input class="entrada-tarefa" placeholder="Vou fazer isso! (tomara)">
+        <button class="botao-adicionar">Adicionar</button>
+        <ul class="lista-tarefas">
+            <li class="tarefa">
             <img src="/img/checked.svg" alt="area-de-check">
-            <li>Testando o codigo</li>
             <img src="/img/bin.svg" alt="area-de-excluir">
+            <p>Testando codigo</p>
+            </li>
         </ul>
     </div>
 </body>

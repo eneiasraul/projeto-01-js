@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+img {
+    height: auto;
+    width: auto;
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.container {
+    background-color: #d1d1d1;
+    width: 500px;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 100px auto 0
+}
+
+body {
+    background: url(./img/ufo_flying_in_the_sky.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.entrada-tarefa{
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+    padding-left: 20px
+}
+
+.botao-adicionar{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: auto;
+    background-color: #4f3862;
+    color: #ffff;
+    font-size: 17px;
+    padding: 0 15px;
+    float: right;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.botao-adicionar:hover{
+    opacity: 0.8;
+}
+
+.botao-adicionar:active{
+    opacity: 0.6;
+}
+
+.lista-tarefa{
+    width: 100%;
+    list-style: none;
+}
+
+.tarefa{
+    background-color: #635e94;
+    box-shadow: 0px 10px 15px -3px rgba(79,65,98,0.2),0px 10px 15px -3px rgba(79,65,98,0.1);
+    display: flex;
+  
+}
