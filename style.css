@@ -11,8 +11,6 @@ img {
     width: auto;
     max-width: 25px;
     max-height: 25px;
-    opacity: 0;
-    transition: opacity 1 ease-in-out;
 }
 
 .container {
@@ -76,6 +74,7 @@ body {
     margin-bottom: 20px;
     align-items: center;
     cursor: pointer;
+    color: #ffff;
 }
 
 .tarefa:hover img{
