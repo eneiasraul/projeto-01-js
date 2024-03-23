@@ -1,35 +1,59 @@
-const button = document.querySelector('.botao-adicionar');
-const input = document.querySelector('.entrada-tarefa');
-const listaCompleta = document.querySelector('.lista-tarefa');
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.querySelector('.botao-adicionar');
+    const input = document.querySelector('.entrada-tarefa');
+    const listaCompleta = document.querySelector('.lista-tarefa');
 
-button.addEventListener('click', adicionarTarefa); //Quando clico no botão
+    button.addEventListener('click', adicionarTarefa);
 
-let listaDeitens = [];
+    let listaDeItens = [];
 
-function adicionarTarefa(){
-    listaDeitens.push(input.value);
-    input.value = '';
-    mostrarTarefa();
-}
+    function adicionarTarefa() {
+        listaDeItens.push({
+            tarefa: input.value,
+            concluida: false
+        });
 
-function mostrarTarefa() {
-    let novaLista = '';
+        input.value = '';
 
-    listaDeitens.forEach((itemTarefa, posicao)=> {
-        
-        novaLista = novaLista + 
-        `<li class="tarefa">
-        <img src="/img/checked.svg" alt="area-de-check">
-        <img src="/img/bin.svg" alt="area-de-excluir" onclick="excluirItem(${posicao})">
-        <p>${itemTarefa}</p>
-        </li>`
-       
-    })
+        mostrarTarefa();
+    }
 
-    listaCompleta.innerHTML = novaLista;
-}
+    function mostrarTarefa() {
+        let novaLista = '';
 
-function excluirItem(posicao){
-    listaDeitens.splice(posicao,1);
-    mostrarTarefa();
-}
+        listaDeItens.forEach((item, posicao) => {
+
+            novaLista = novaLista +
+                `<li class="tarefa ${item.concluida && "feito"}">
+                    <img src="img/checked.svg" alt="area-de-check">
+                    <img src="img/bin.svg" alt="area-de-excluir">
+                    <p>${item.tarefa}</p>
+                </li>`
+
+        });
+
+        listaCompleta.innerHTML = novaLista;
+
+        document.querySelectorAll('.tarefa img:first-child').forEach((img, posicao) => {
+            img.addEventListener('click', function() {
+                tarefaFeita(posicao);
+            });
+        });
+
+        document.querySelectorAll('.tarefa img:nth-child(2)').forEach((img, posicao) => {
+            img.addEventListener('click', function() {
+                excluirItem(posicao);
+            });
+        });
+    }
+
+    function tarefaFeita(posicao) {
+        listaDeItens[posicao].concluida = !listaDeItens[posicao].concluida;
+        mostrarTarefa();
+    }
+
+    function excluirItem(posicao) {
+        listaDeItens.splice(posicao, 1);
+        mostrarTarefa();
+    }
+});

@@ -84,3 +84,9 @@ body {
 p{
     margin-left: 20px;
 }
+
+.lista-tarefa .tarefa.feito {
+    background-color: green;
+    text-decoration: line-through;
+}
+
