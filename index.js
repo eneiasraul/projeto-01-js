@@ -56,4 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         listaDeItens.splice(posicao, 1);
         mostrarTarefa();
     }
+
+    localStorage.setItem('listaDeTarefas', JSON.stringify (adicionarTaref));
 });
