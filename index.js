@@ -15,16 +15,21 @@ function adicionarTarefa(){
 function mostrarTarefa() {
     let novaLista = '';
 
-    listaDeitens.forEach((itemTarefa)=> {
+    listaDeitens.forEach((itemTarefa, posicao)=> {
         
         novaLista = novaLista + 
         `<li class="tarefa">
         <img src="/img/checked.svg" alt="area-de-check">
-        <img src="/img/bin.svg" alt="area-de-excluir">
+        <img src="/img/bin.svg" alt="area-de-excluir" onclick="excluirItem(${posicao})">
         <p>${itemTarefa}</p>
         </li>`
        
-    });
+    })
 
     listaCompleta.innerHTML = novaLista;
+}
+
+function excluirItem(posicao){
+    listaDeitens.splice(posicao,1);
+    mostrarTarefa();
 }
