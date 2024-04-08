@@ -90,3 +90,30 @@ p{
     text-decoration: line-through;
 }
 
+#botao-concluidos{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: auto;
+    background-color: #4f3862;
+    color: #ffff;
+    font-size: 17px;
+    padding: 0 15px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+#botao-pendentes{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: auto;
+    background-color: #4f3862;
+    color: #ffff;
+    font-size: 17px;
+    padding: 0 15px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 15px;
+}
